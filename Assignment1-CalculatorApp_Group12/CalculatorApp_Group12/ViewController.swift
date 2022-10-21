@@ -36,20 +36,26 @@ import UIKit
         
         var counter = 0
         
-        //Result Label
+        //Result Label 
         @IBOutlet weak var ResultLabel: UILabel!
-        
         @IBOutlet weak var expressionLabel: UILabel!
+        
+        // Result Label Landscape
+        @IBOutlet weak var LandscapeResultLabel: UILabel!
+        @IBOutlet weak var LandscapeExpressionLabel: UILabel!
         
         override func viewDidLoad()
         {
             super.viewDidLoad()
+            
         }
         
-            
+        
+        // Event Handlers for landscape operator buttons
+        @IBAction func LandscapeOperatorButtonPressed(_ sender: UIButton) {
+        }
+        
         // Event Handlers
-        
-        
         //2+2*3/2-5
         //+-*/
         @IBAction func OperatorButton_Pressed(_ sender: UIButton)
@@ -2178,22 +2184,11 @@ import UIKit
                             old_expression = ""
                             distance_plus = 0
                             distance_minus = 0
-
-                            
                             
                         }
                         
-                        
-                        
                     }
                 }
-                
-                
-                
-                
-                
-                
-                
                 
                         if expression.contains("=") {
                             expression = String(expression.dropLast())
@@ -2220,9 +2215,6 @@ import UIKit
                     two_operators = ""
                     ResultLabel.text = expression
                 }
-                
-                
-                
                 
             }
             
@@ -2309,9 +2301,6 @@ import UIKit
                 distance_plus = 0
                 distance_minus = 0
             }
-            
-            
-            
             
             // +/- logic
             if operatorButton == "+/-" {
@@ -2414,10 +2403,13 @@ import UIKit
                 distance_minus = 0
             }
             
-  
-            
-            
-            
+        }
+        
+        
+        // Landscape NumberButton_Pressed:
+        @IBAction func LandscapeNumberButton_Pressed(_ sender: UIButton)
+        {
+        
         }
         
         // NumberButton_Pressed: 123456789
@@ -2426,14 +2418,13 @@ import UIKit
             let num: String = String(sender.titleLabel!.text!)
             expression = expression + num
             print(expression)
-            
             expressionLabel.text = expression
-                          
-
-            
         }
      
-
+        
+        // Landscape ExtraButton_Pressed: c <-
+        @IBAction func LandscapeClearButton_Pressed(_ sender: UIButton) {
+        }
         
     // ExtraButton_Pressed: c <-
     @IBAction func ClearButton_Pressed(_ sender: UIButton)

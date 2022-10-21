@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,9 +12,459 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalculatorApp_Group12" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q97-AS-zdE" userLabel="Landscape Result">
+                                <rect key="frame" x="67" y="15" width="718" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5VZ-d5-PVX" userLabel="Landscape Third Row">
+                                <rect key="frame" x="109" y="129" width="656" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-U8-3gm">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="&lt;-">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeClearButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Zc-IQ-hWt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epx-Xc-5Rm">
+                                        <rect key="frame" x="83" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="AC">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeClearButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4pW-s5-blS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPx-LG-c7I">
+                                        <rect key="frame" x="166" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="/">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="439-fb-day"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49Z-dn-xgN">
+                                        <rect key="frame" x="249" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="*">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMz-q0-c4H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoR-zZ-G8w">
+                                        <rect key="frame" x="332" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="7">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLu-XN-Ouk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFy-F8-mPK">
+                                        <rect key="frame" x="415" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="8">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96k-95-aWv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wko-b4-NTz">
+                                        <rect key="frame" x="498" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="9">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Z9-uK-efw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqk-uL-q6a">
+                                        <rect key="frame" x="581" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="0">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KKV-dA-w2b"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlM-LN-SHP" userLabel="Landscape First Row">
+                                <rect key="frame" x="109" y="296" width="661" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNZ-es-HyV">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Cos">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEc-pk-qv0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFn-E9-nKM">
+                                        <rect key="frame" x="83" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Tan">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8h-7D-N6G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxm-oL-MGp">
+                                        <rect key="frame" x="166" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="%">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQq-Ur-Ofb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-1R-LdD">
+                                        <rect key="frame" x="249" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="+">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wS7-Ob-YsD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcF-1D-OV5">
+                                        <rect key="frame" x="332" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="1">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qPq-ML-SAX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-bq-Bzd">
+                                        <rect key="frame" x="415" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="2">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZKp-Mb-v1E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wj0-nw-76y">
+                                        <rect key="frame" x="498" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="3">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="brw-d4-XSf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-jJ-khI">
+                                        <rect key="frame" x="576" y="0.0" width="85" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="=">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bb-bn-h0N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uj-P6-lOU" userLabel="Landscape Expression">
+                                <rect key="frame" x="90" y="17" width="680" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </label>
                             <view contentMode="scaleToFill" id="7tS-3z-4dL" userLabel="Third Row">
                                 <rect key="frame" x="13" y="494" width="364" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,15 +572,40 @@
                                 <viewLayoutGuide key="safeArea" id="zZb-24-lMX"/>
                                 <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="g4t-32-du5" firstAttribute="baseline" secondItem="Glb-VN-O2V" secondAttribute="baseline" id="33k-fZ-Keq"/>
-                                    <constraint firstItem="bnD-AU-HTl" firstAttribute="baseline" secondItem="4wP-Dk-kmw" secondAttribute="baseline" id="5hx-qr-42y"/>
-                                    <constraint firstItem="Glb-VN-O2V" firstAttribute="baseline" secondItem="bnD-AU-HTl" secondAttribute="baseline" id="7WH-AL-5dh"/>
-                                    <constraint firstItem="g4t-32-du5" firstAttribute="leading" secondItem="7tS-3z-4dL" secondAttribute="leading" id="7z6-bS-vcA"/>
-                                    <constraint firstItem="bnD-AU-HTl" firstAttribute="leading" secondItem="Glb-VN-O2V" secondAttribute="trailing" constant="8" symbolic="YES" id="BMM-Sv-srO"/>
-                                    <constraint firstItem="g4t-32-du5" firstAttribute="top" secondItem="zZb-24-lMX" secondAttribute="top" id="apo-0d-Tex"/>
-                                    <constraint firstItem="4wP-Dk-kmw" firstAttribute="leading" secondItem="bnD-AU-HTl" secondAttribute="trailing" constant="8" symbolic="YES" id="hGv-fS-2CT"/>
-                                    <constraint firstItem="Glb-VN-O2V" firstAttribute="leading" secondItem="g4t-32-du5" secondAttribute="trailing" constant="8" symbolic="YES" id="zzb-g9-TF6"/>
+                                    <constraint firstItem="g4t-32-du5" firstAttribute="leading" secondItem="7tS-3z-4dL" secondAttribute="leading" id="1fJ-oz-DmQ"/>
+                                    <constraint firstItem="bnD-AU-HTl" firstAttribute="leading" secondItem="Glb-VN-O2V" secondAttribute="trailing" constant="8" symbolic="YES" id="E3d-2g-KRk"/>
+                                    <constraint firstItem="g4t-32-du5" firstAttribute="top" secondItem="zZb-24-lMX" secondAttribute="top" id="Lgb-wL-7Xp"/>
+                                    <constraint firstItem="4wP-Dk-kmw" firstAttribute="leading" secondItem="bnD-AU-HTl" secondAttribute="trailing" constant="8" symbolic="YES" id="TU7-aM-rqM"/>
+                                    <constraint firstItem="bnD-AU-HTl" firstAttribute="baseline" secondItem="4wP-Dk-kmw" secondAttribute="baseline" id="b5W-c9-zZY"/>
+                                    <constraint firstItem="Glb-VN-O2V" firstAttribute="leading" secondItem="g4t-32-du5" secondAttribute="trailing" constant="8" symbolic="YES" id="kuU-No-Q6V"/>
+                                    <constraint firstItem="Glb-VN-O2V" firstAttribute="baseline" secondItem="bnD-AU-HTl" secondAttribute="baseline" id="z2h-Gt-ZWn"/>
+                                    <constraint firstItem="g4t-32-du5" firstAttribute="baseline" secondItem="Glb-VN-O2V" secondAttribute="baseline" id="zJR-PO-X6w"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1fJ-oz-DmQ"/>
+                                        <exclude reference="Lgb-wL-7Xp"/>
+                                        <exclude reference="zJR-PO-X6w"/>
+                                        <exclude reference="kuU-No-Q6V"/>
+                                        <exclude reference="z2h-Gt-ZWn"/>
+                                        <exclude reference="E3d-2g-KRk"/>
+                                        <exclude reference="b5W-c9-zZY"/>
+                                        <exclude reference="TU7-aM-rqM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1fJ-oz-DmQ"/>
+                                        <include reference="Lgb-wL-7Xp"/>
+                                        <include reference="zJR-PO-X6w"/>
+                                        <include reference="kuU-No-Q6V"/>
+                                        <include reference="z2h-Gt-ZWn"/>
+                                        <include reference="E3d-2g-KRk"/>
+                                        <include reference="b5W-c9-zZY"/>
+                                        <include reference="TU7-aM-rqM"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" id="cpR-D0-7ow" userLabel="Second Row">
                                 <rect key="frame" x="13" y="600" width="364" height="85"/>
@@ -239,15 +714,40 @@
                                 <viewLayoutGuide key="safeArea" id="xs9-rh-RJ8"/>
                                 <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="Aw5-M0-grM" firstAttribute="baseline" secondItem="kIO-AU-FFg" secondAttribute="baseline" id="FsP-bZ-gLm"/>
-                                    <constraint firstItem="kIO-AU-FFg" firstAttribute="leading" secondItem="Aw5-M0-grM" secondAttribute="trailing" constant="8" symbolic="YES" id="TTo-Qh-Tao"/>
-                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="top" secondItem="xs9-rh-RJ8" secondAttribute="top" id="UV0-h3-uS8"/>
-                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="baseline" secondItem="Aw5-M0-grM" secondAttribute="baseline" id="dsz-8z-SPb"/>
-                                    <constraint firstItem="GiA-l1-QSg" firstAttribute="leading" secondItem="kIO-AU-FFg" secondAttribute="trailing" constant="8" symbolic="YES" id="ldL-pp-MCD"/>
-                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="leading" secondItem="cpR-D0-7ow" secondAttribute="leading" id="lfe-CV-sIU"/>
-                                    <constraint firstItem="Aw5-M0-grM" firstAttribute="leading" secondItem="eES-Sg-BuX" secondAttribute="trailing" constant="8" symbolic="YES" id="rcR-IP-tGN"/>
-                                    <constraint firstItem="kIO-AU-FFg" firstAttribute="baseline" secondItem="GiA-l1-QSg" secondAttribute="baseline" id="s34-Jb-cdd"/>
+                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="baseline" secondItem="Aw5-M0-grM" secondAttribute="baseline" id="672-xj-7X0"/>
+                                    <constraint firstItem="Aw5-M0-grM" firstAttribute="leading" secondItem="eES-Sg-BuX" secondAttribute="trailing" constant="8" symbolic="YES" id="AZF-dy-lGT"/>
+                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="leading" secondItem="cpR-D0-7ow" secondAttribute="leading" id="O85-F4-spu"/>
+                                    <constraint firstItem="Aw5-M0-grM" firstAttribute="baseline" secondItem="kIO-AU-FFg" secondAttribute="baseline" id="bbm-c8-Q9s"/>
+                                    <constraint firstItem="eES-Sg-BuX" firstAttribute="top" secondItem="xs9-rh-RJ8" secondAttribute="top" id="eoR-Gn-Cxn"/>
+                                    <constraint firstItem="GiA-l1-QSg" firstAttribute="leading" secondItem="kIO-AU-FFg" secondAttribute="trailing" constant="8" symbolic="YES" id="kYX-X4-JhN"/>
+                                    <constraint firstItem="kIO-AU-FFg" firstAttribute="leading" secondItem="Aw5-M0-grM" secondAttribute="trailing" constant="8" symbolic="YES" id="miU-Wj-zXC"/>
+                                    <constraint firstItem="kIO-AU-FFg" firstAttribute="baseline" secondItem="GiA-l1-QSg" secondAttribute="baseline" id="qWb-ml-a62"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="672-xj-7X0"/>
+                                        <exclude reference="O85-F4-spu"/>
+                                        <exclude reference="eoR-Gn-Cxn"/>
+                                        <exclude reference="AZF-dy-lGT"/>
+                                        <exclude reference="bbm-c8-Q9s"/>
+                                        <exclude reference="miU-Wj-zXC"/>
+                                        <exclude reference="qWb-ml-a62"/>
+                                        <exclude reference="kYX-X4-JhN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="672-xj-7X0"/>
+                                        <include reference="O85-F4-spu"/>
+                                        <include reference="eoR-Gn-Cxn"/>
+                                        <include reference="AZF-dy-lGT"/>
+                                        <include reference="bbm-c8-Q9s"/>
+                                        <include reference="miU-Wj-zXC"/>
+                                        <include reference="qWb-ml-a62"/>
+                                        <include reference="kYX-X4-JhN"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" id="3aB-Hw-hAR" userLabel="Fourth Row">
                                 <rect key="frame" x="16" y="388" width="364" height="85"/>
@@ -357,15 +857,40 @@
                                 <viewLayoutGuide key="safeArea" id="jqs-RP-I6l"/>
                                 <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="leading" secondItem="3aB-Hw-hAR" secondAttribute="leading" id="24K-9I-N9H"/>
-                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="top" secondItem="jqs-RP-I6l" secondAttribute="top" id="7FF-lY-cZL"/>
-                                    <constraint firstItem="8x4-Pr-iSx" firstAttribute="leading" secondItem="eAf-ed-6KR" secondAttribute="trailing" constant="8" symbolic="YES" id="9qS-qm-XoP"/>
-                                    <constraint firstItem="8x4-Pr-iSx" firstAttribute="baseline" secondItem="Mc5-Vq-VXD" secondAttribute="baseline" id="FtJ-Kj-aTY"/>
-                                    <constraint firstItem="eAf-ed-6KR" firstAttribute="baseline" secondItem="8x4-Pr-iSx" secondAttribute="baseline" id="Mq0-IG-thu"/>
-                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="baseline" secondItem="eAf-ed-6KR" secondAttribute="baseline" id="maG-mA-gIl"/>
-                                    <constraint firstItem="eAf-ed-6KR" firstAttribute="leading" secondItem="e6x-pw-ZYs" secondAttribute="trailing" constant="8" symbolic="YES" id="prC-Yf-RDo"/>
-                                    <constraint firstItem="Mc5-Vq-VXD" firstAttribute="leading" secondItem="8x4-Pr-iSx" secondAttribute="trailing" constant="8" symbolic="YES" id="q3M-D9-VzD"/>
+                                    <constraint firstItem="8x4-Pr-iSx" firstAttribute="baseline" secondItem="Mc5-Vq-VXD" secondAttribute="baseline" id="E5q-QF-aBA"/>
+                                    <constraint firstItem="Mc5-Vq-VXD" firstAttribute="leading" secondItem="8x4-Pr-iSx" secondAttribute="trailing" constant="8" symbolic="YES" id="Obv-hy-6Fz"/>
+                                    <constraint firstItem="eAf-ed-6KR" firstAttribute="leading" secondItem="e6x-pw-ZYs" secondAttribute="trailing" constant="8" symbolic="YES" id="SVh-h9-W9E"/>
+                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="baseline" secondItem="eAf-ed-6KR" secondAttribute="baseline" id="Zzf-M5-S4O"/>
+                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="top" secondItem="jqs-RP-I6l" secondAttribute="top" id="efV-NK-RJl"/>
+                                    <constraint firstItem="8x4-Pr-iSx" firstAttribute="leading" secondItem="eAf-ed-6KR" secondAttribute="trailing" constant="8" symbolic="YES" id="gMp-8r-QCM"/>
+                                    <constraint firstItem="eAf-ed-6KR" firstAttribute="baseline" secondItem="8x4-Pr-iSx" secondAttribute="baseline" id="lNb-to-amH"/>
+                                    <constraint firstItem="e6x-pw-ZYs" firstAttribute="leading" secondItem="3aB-Hw-hAR" secondAttribute="leading" id="xBs-hh-W0z"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zzf-M5-S4O"/>
+                                        <exclude reference="efV-NK-RJl"/>
+                                        <exclude reference="xBs-hh-W0z"/>
+                                        <exclude reference="SVh-h9-W9E"/>
+                                        <exclude reference="lNb-to-amH"/>
+                                        <exclude reference="E5q-QF-aBA"/>
+                                        <exclude reference="gMp-8r-QCM"/>
+                                        <exclude reference="Obv-hy-6Fz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Zzf-M5-S4O"/>
+                                        <include reference="efV-NK-RJl"/>
+                                        <include reference="xBs-hh-W0z"/>
+                                        <include reference="SVh-h9-W9E"/>
+                                        <include reference="lNb-to-amH"/>
+                                        <include reference="E5q-QF-aBA"/>
+                                        <include reference="gMp-8r-QCM"/>
+                                        <include reference="Obv-hy-6Fz"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3y-CY-u4f" userLabel="Fifth Row">
                                 <rect key="frame" x="16" y="297" width="364" height="85"/>
@@ -477,16 +1002,43 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="leading" secondItem="I3y-CY-u4f" secondAttribute="leading" id="41O-b6-qMy"/>
-                                    <constraint firstItem="c4x-mJ-BHX" firstAttribute="baseline" secondItem="WGF-9h-SJn" secondAttribute="baseline" id="99u-6Q-mi5"/>
-                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="baseline" secondItem="c4x-mJ-BHX" secondAttribute="baseline" id="KpO-tc-2Ub"/>
-                                    <constraint firstAttribute="bottom" secondItem="zfx-9x-tLq" secondAttribute="bottom" id="OsR-1P-DBA"/>
-                                    <constraint firstItem="c4x-mJ-BHX" firstAttribute="leading" secondItem="zfx-9x-tLq" secondAttribute="trailing" constant="8" symbolic="YES" id="TMX-Dt-b6u"/>
-                                    <constraint firstItem="WGF-9h-SJn" firstAttribute="leading" secondItem="c4x-mJ-BHX" secondAttribute="trailing" constant="8" symbolic="YES" id="Wgy-S3-qVb"/>
-                                    <constraint firstItem="AYy-B2-HXZ" firstAttribute="leading" secondItem="WGF-9h-SJn" secondAttribute="trailing" constant="8" symbolic="YES" id="XT4-7o-IZW"/>
-                                    <constraint firstItem="WGF-9h-SJn" firstAttribute="baseline" secondItem="AYy-B2-HXZ" secondAttribute="baseline" id="atY-v8-WsU"/>
-                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="top" secondItem="I3y-CY-u4f" secondAttribute="top" id="bjo-HO-GVF"/>
+                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="top" secondItem="I3y-CY-u4f" secondAttribute="top" id="EDY-TA-3JO"/>
+                                    <constraint firstItem="WGF-9h-SJn" firstAttribute="leading" secondItem="c4x-mJ-BHX" secondAttribute="trailing" constant="8" symbolic="YES" id="Kjf-GE-rrw"/>
+                                    <constraint firstItem="c4x-mJ-BHX" firstAttribute="baseline" secondItem="WGF-9h-SJn" secondAttribute="baseline" id="S41-z0-Q7V"/>
+                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="leading" secondItem="I3y-CY-u4f" secondAttribute="leading" id="Vg4-fo-Ljo"/>
+                                    <constraint firstItem="AYy-B2-HXZ" firstAttribute="leading" secondItem="WGF-9h-SJn" secondAttribute="trailing" constant="8" symbolic="YES" id="cwZ-df-zZR"/>
+                                    <constraint firstItem="zfx-9x-tLq" firstAttribute="baseline" secondItem="c4x-mJ-BHX" secondAttribute="baseline" id="kfW-j5-Ebo"/>
+                                    <constraint firstItem="c4x-mJ-BHX" firstAttribute="leading" secondItem="zfx-9x-tLq" secondAttribute="trailing" constant="8" symbolic="YES" id="pMY-Aa-VJW"/>
+                                    <constraint firstItem="WGF-9h-SJn" firstAttribute="baseline" secondItem="AYy-B2-HXZ" secondAttribute="baseline" id="qXM-To-gOP"/>
+                                    <constraint firstAttribute="bottom" secondItem="zfx-9x-tLq" secondAttribute="bottom" id="wQd-16-ZhY"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EDY-TA-3JO"/>
+                                        <exclude reference="Vg4-fo-Ljo"/>
+                                        <exclude reference="kfW-j5-Ebo"/>
+                                        <exclude reference="wQd-16-ZhY"/>
+                                        <exclude reference="S41-z0-Q7V"/>
+                                        <exclude reference="pMY-Aa-VJW"/>
+                                        <exclude reference="Kjf-GE-rrw"/>
+                                        <exclude reference="qXM-To-gOP"/>
+                                        <exclude reference="cwZ-df-zZR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EDY-TA-3JO"/>
+                                        <include reference="Vg4-fo-Ljo"/>
+                                        <include reference="kfW-j5-Ebo"/>
+                                        <include reference="wQd-16-ZhY"/>
+                                        <include reference="S41-z0-Q7V"/>
+                                        <include reference="pMY-Aa-VJW"/>
+                                        <include reference="Kjf-GE-rrw"/>
+                                        <include reference="qXM-To-gOP"/>
+                                        <include reference="cwZ-df-zZR"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" id="9Pe-Hx-U3L" userLabel="First Row">
                                 <rect key="frame" x="13" y="715" width="364" height="85"/>
@@ -599,23 +1151,45 @@
                                 <viewLayoutGuide key="safeArea" id="WGi-Hc-DF8"/>
                                 <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="EoC-dd-L13" firstAttribute="baseline" secondItem="Lh7-00-t9w" secondAttribute="baseline" id="2uG-v3-pag"/>
-                                    <constraint firstItem="Lh7-00-t9w" firstAttribute="baseline" secondItem="wDU-6b-dTv" secondAttribute="baseline" id="49B-sP-tUf"/>
-                                    <constraint firstItem="SPd-41-CQ5" firstAttribute="leading" secondItem="wDU-6b-dTv" secondAttribute="trailing" constant="8" symbolic="YES" id="J7j-35-f1I"/>
-                                    <constraint firstItem="EoC-dd-L13" firstAttribute="top" secondItem="WGi-Hc-DF8" secondAttribute="top" id="Pgc-3n-iYv"/>
-                                    <constraint firstItem="EoC-dd-L13" firstAttribute="leading" secondItem="9Pe-Hx-U3L" secondAttribute="leading" id="T5x-B4-8uI"/>
-                                    <constraint firstItem="Lh7-00-t9w" firstAttribute="leading" secondItem="EoC-dd-L13" secondAttribute="trailing" constant="8" symbolic="YES" id="khN-dG-ffj"/>
-                                    <constraint firstItem="wDU-6b-dTv" firstAttribute="leading" secondItem="Lh7-00-t9w" secondAttribute="trailing" constant="8" symbolic="YES" id="mR7-Gg-is4"/>
-                                    <constraint firstItem="SPd-41-CQ5" firstAttribute="top" secondItem="9Pe-Hx-U3L" secondAttribute="top" constant="-5" id="sbl-vD-DbG"/>
+                                    <constraint firstItem="wDU-6b-dTv" firstAttribute="leading" secondItem="Lh7-00-t9w" secondAttribute="trailing" constant="8" symbolic="YES" id="BoY-He-Yao"/>
+                                    <constraint firstItem="Lh7-00-t9w" firstAttribute="leading" secondItem="EoC-dd-L13" secondAttribute="trailing" constant="8" symbolic="YES" id="VYm-3W-hkl"/>
+                                    <constraint firstItem="SPd-41-CQ5" firstAttribute="top" secondItem="9Pe-Hx-U3L" secondAttribute="top" constant="-5" id="XNw-mu-s2Q"/>
+                                    <constraint firstItem="EoC-dd-L13" firstAttribute="top" secondItem="WGi-Hc-DF8" secondAttribute="top" id="g3E-A0-OH4"/>
+                                    <constraint firstItem="EoC-dd-L13" firstAttribute="leading" secondItem="9Pe-Hx-U3L" secondAttribute="leading" id="k73-zu-M8c"/>
+                                    <constraint firstItem="EoC-dd-L13" firstAttribute="baseline" secondItem="Lh7-00-t9w" secondAttribute="baseline" id="lOC-KM-PO9"/>
+                                    <constraint firstItem="Lh7-00-t9w" firstAttribute="baseline" secondItem="wDU-6b-dTv" secondAttribute="baseline" id="ltO-58-eVk"/>
+                                    <constraint firstItem="SPd-41-CQ5" firstAttribute="leading" secondItem="wDU-6b-dTv" secondAttribute="trailing" constant="8" symbolic="YES" id="mwh-47-JfN"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="g3E-A0-OH4"/>
+                                        <exclude reference="k73-zu-M8c"/>
+                                        <exclude reference="lOC-KM-PO9"/>
+                                        <exclude reference="VYm-3W-hkl"/>
+                                        <exclude reference="ltO-58-eVk"/>
+                                        <exclude reference="BoY-He-Yao"/>
+                                        <exclude reference="XNw-mu-s2Q"/>
+                                        <exclude reference="mwh-47-JfN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="g3E-A0-OH4"/>
+                                        <include reference="k73-zu-M8c"/>
+                                        <include reference="lOC-KM-PO9"/>
+                                        <include reference="VYm-3W-hkl"/>
+                                        <include reference="ltO-58-eVk"/>
+                                        <include reference="BoY-He-Yao"/>
+                                        <include reference="XNw-mu-s2Q"/>
+                                        <include reference="mwh-47-JfN"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHG-ib-kl1">
-                                <rect key="frame" x="16" y="180" width="361" height="90"/>
+                                <rect key="frame" x="16" y="162" width="364" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="wwQ-hG-2Fb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -624,41 +1198,307 @@
                                         <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwi-kD-7Bt">
-                                <rect key="frame" x="16" y="82" width="361" height="90"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwi-kD-7Bt">
+                                <rect key="frame" x="19" y="174" width="358" height="25"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="0mi-c1-zxf" userLabel="Landscape Third Row">
+                                <rect key="frame" x="109" y="212" width="656" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmG-PX-hLf">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Sin">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E5x-a6-eaL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3b-iG-kQC">
+                                        <rect key="frame" x="83" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="π">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QZp-vv-laR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kR-RV-DIR">
+                                        <rect key="frame" x="166" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="+/-">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qhu-Pf-UJp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-hO-ZCc">
+                                        <rect key="frame" x="249" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="-">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeOperatorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WjM-Ob-khC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LG-9a-mCo">
+                                        <rect key="frame" x="332" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="4">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXp-Np-j8A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67L-Ii-m59">
+                                        <rect key="frame" x="415" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="5">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M2S-2e-53Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xU-ME-xbE">
+                                        <rect key="frame" x="498" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="6">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" red="0.59215686270000001" green="0.39607843139999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uYX-11-MJm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-4f-fv2">
+                                        <rect key="frame" x="581" y="1" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="1" green="0.62745098040000002" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content=".">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="1" green="0.59999999999999998" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                        <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                                        <connections>
+                                            <action selector="LandscapeNumberButton_Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="siJ-RS-1yJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="xDK-jt-qvg"/>
+                                <color key="backgroundColor" red="1" green="0.7843137255" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <variation key="heightClass=compact-widthClass=regular" hidden="NO"/>
+                                <variation key="heightClass=regular-widthClass=compact" hidden="YES"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="0.78431372549019607" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="I3y-CY-u4f" firstAttribute="trailing" secondItem="3aB-Hw-hAR" secondAttribute="trailing" id="6Yu-gr-RBI"/>
-                            <constraint firstItem="I3y-CY-u4f" firstAttribute="leading" secondItem="3aB-Hw-hAR" secondAttribute="leading" id="Qfp-az-iNk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LHG-ib-kl1" secondAttribute="trailing" constant="16" id="R7U-T8-bep"/>
-                            <constraint firstItem="LHG-ib-kl1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="fC4-38-jae"/>
-                            <constraint firstItem="I3y-CY-u4f" firstAttribute="top" secondItem="LHG-ib-kl1" secondAttribute="bottom" constant="27" id="gqg-cN-Df0"/>
-                            <constraint firstItem="LHG-ib-kl1" firstAttribute="leading" secondItem="I3y-CY-u4f" secondAttribute="leading" id="ssa-FR-Khy"/>
+                            <constraint firstItem="3aB-Hw-hAR" firstAttribute="top" secondItem="I3y-CY-u4f" secondAttribute="bottom" constant="6" id="3u5-jR-TdF"/>
+                            <constraint firstItem="Xwi-kD-7Bt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="A1f-qu-KcN"/>
+                            <constraint firstItem="I3y-CY-u4f" firstAttribute="trailing" secondItem="3aB-Hw-hAR" secondAttribute="trailing" id="DVx-UW-s1T"/>
+                            <constraint firstItem="LHG-ib-kl1" firstAttribute="leading" secondItem="I3y-CY-u4f" secondAttribute="leading" id="SFs-F3-WDj"/>
+                            <constraint firstItem="I3y-CY-u4f" firstAttribute="top" secondItem="Xwi-kD-7Bt" secondAttribute="bottom" constant="98" id="TPj-Rs-odY"/>
+                            <constraint firstItem="I3y-CY-u4f" firstAttribute="top" secondItem="LHG-ib-kl1" secondAttribute="bottom" constant="15" id="VgE-wV-SKo"/>
+                            <constraint firstItem="Xwi-kD-7Bt" firstAttribute="trailing" secondItem="7tS-3z-4dL" secondAttribute="trailing" id="aVt-7T-GBr"/>
+                            <constraint firstItem="LHG-ib-kl1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="dsk-P1-29L"/>
+                            <constraint firstItem="LHG-ib-kl1" firstAttribute="trailing" secondItem="I3y-CY-u4f" secondAttribute="trailing" id="hHo-c7-qce"/>
+                            <constraint firstItem="I3y-CY-u4f" firstAttribute="leading" secondItem="3aB-Hw-hAR" secondAttribute="leading" id="qcA-do-InY"/>
+                            <constraint firstItem="Xwi-kD-7Bt" firstAttribute="centerX" secondItem="LHG-ib-kl1" secondAttribute="centerX" id="zsH-nX-EwT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7tS-3z-4dL"/>
+                                <exclude reference="cpR-D0-7ow"/>
+                                <exclude reference="3aB-Hw-hAR"/>
+                                <exclude reference="I3y-CY-u4f"/>
+                                <exclude reference="9Pe-Hx-U3L"/>
+                                <exclude reference="LHG-ib-kl1"/>
+                                <exclude reference="Xwi-kD-7Bt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="SFs-F3-WDj"/>
+                                <exclude reference="dsk-P1-29L"/>
+                                <exclude reference="hHo-c7-qce"/>
+                                <exclude reference="DVx-UW-s1T"/>
+                                <exclude reference="VgE-wV-SKo"/>
+                                <exclude reference="qcA-do-InY"/>
+                                <exclude reference="3u5-jR-TdF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="5VZ-d5-PVX"/>
+                                <include reference="UlM-LN-SHP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7tS-3z-4dL"/>
+                                <include reference="cpR-D0-7ow"/>
+                                <include reference="3aB-Hw-hAR"/>
+                                <include reference="I3y-CY-u4f"/>
+                                <include reference="9Pe-Hx-U3L"/>
+                                <include reference="LHG-ib-kl1"/>
+                                <include reference="Xwi-kD-7Bt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="SFs-F3-WDj"/>
+                                <include reference="dsk-P1-29L"/>
+                                <include reference="hHo-c7-qce"/>
+                                <include reference="DVx-UW-s1T"/>
+                                <include reference="VgE-wV-SKo"/>
+                                <include reference="qcA-do-InY"/>
+                                <include reference="3u5-jR-TdF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="ResultLabel" destination="LHG-ib-kl1" id="8pL-au-Fgy"/>
-                        <outlet property="expressionLabel" destination="Xwi-kD-7Bt" id="lex-YS-2kU"/>
+                        <outlet property="LandscapeExpressionLabel" destination="0Uj-P6-lOU" id="9hg-Qq-hte"/>
+                        <outlet property="LandscapeResultLabel" destination="Q97-AS-zdE" id="fDm-RL-kKV"/>
+                        <outlet property="ResultLabel" destination="LHG-ib-kl1" id="aU8-YW-lED"/>
+                        <outlet property="expressionLabel" destination="Xwi-kD-7Bt" id="emf-No-h3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215.38461538461539" y="-36.255924170616112"/>
+            <point key="canvasLocation" x="-217.60563380281693" y="-38.931297709923662"/>
         </scene>
     </scenes>
     <color key="tintColor" systemColor="tintColor"/>

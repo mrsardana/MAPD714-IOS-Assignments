@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6F20DA65-7A4A-4612-9ABF-FCB5F2FF18D2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6A0190C-1BCE-41EE-90C3-49A26117EA2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalculatorApp_Group12/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2599"
+            endingLineNumber = "2599"
+            landmarkName = "LandscapeOperatorButtonPressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F6A0190C-1BCE-41EE-90C3-49A26117EA2B - b23fa89fa7ec4f93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorApp_Group12.ViewController.LandscapeOperatorButtonPressed(__C.UIButton) -&gt; ()"
+                  moduleName = "CalculatorApp_Group12"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khawajatalhahaseeb/Desktop/Assignment1-CalculatorApp_Group12/CalculatorApp_Group12/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2600"
+                  endingLineNumber = "2600"
+                  offsetFromSymbolStart = "478716">
+               </Location>
+               <Location
+                  uuid = "F6A0190C-1BCE-41EE-90C3-49A26117EA2B - b23fa89fa7ec4f93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorApp_Group12.ViewController.LandscapeOperatorButtonPressed(__C.UIButton) -&gt; ()"
+                  moduleName = "CalculatorApp_Group12"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khawajatalhahaseeb/Desktop/Assignment1-CalculatorApp_Group12/CalculatorApp_Group12/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2600"
+                  endingLineNumber = "2600"
+                  offsetFromSymbolStart = "478904">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

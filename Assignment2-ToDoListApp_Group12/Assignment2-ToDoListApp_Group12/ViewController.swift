@@ -1,9 +1,16 @@
-//
-//  ViewController.swift
-//  Assignment2-ToDoListApp_Group12
-//
-//  Created by Deepak Sardana on 2022-11-09.
-//
+//  Assignment 2 - ToDoListApp - Part 1 – UI Design
+//  Group No 12
+//  Author's name and StudentID:
+//  1. Deepak Sardana
+//  Student ID: 301289249
+//  2. Khawaja Talha Haseeb
+//  Student ID: 301274473
+//  3. Muhammad Bilal Dilbar Hussain
+//  Student ID: 301205152
+//  App description: This is first part of App. Using Xcode, latest version of iOS SDK and the Swift programming language, we have created a To Do List app. In this part, we created the User Interface for the Todo List App. The app interface will allow the user to create a list of Todos on the main screen. We also included a another screen that displays the Todo Details.
+//  Last Updated 11 November, 2022
+//  Xcode Version : Version 14.1 (14B47b)
+
 
 import UIKit
 
@@ -31,20 +38,24 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         ToDoListTabelView.showsVerticalScrollIndicator = false
     }
     
+    // Creating sections of mylist records counts
     func numberOfSections(in tableView: UITableView) -> Int {
         return myList.count
     }
     
+    // Creating 1 row for each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 1
     }
     
+    // Giving height to the row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 79
     }
     
+    // Set the spacing between sections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = view.backgroundColor
@@ -56,6 +67,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
            return 0.5
        }
     
+    // Creating cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: myListIdentifier, for : indexPath) as! SwitchEditTableViewCell

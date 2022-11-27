@@ -1,4 +1,5 @@
- import UIKit
+import UIKit
+import Foundation
 
 class SwitchEditTableViewCell: UITableViewCell
 {
@@ -17,11 +18,19 @@ class SwitchEditTableViewCell: UITableViewCell
     }
     
 
-    func set(name: String, date:String, isComplete: Bool)
+    func set(title: String, date: String, isCompleted:Bool, dueDateReq:Bool)
     {
-        Label.text = name
-        DateLabel.text = date
-        Switch.isOn = isComplete
+        if dueDateReq
+        {
+            DateLabel.text = date
+        }
+        else
+        {
+            DateLabel.text = ""
+        }
+        Label.text = title
+//        DateLabel.text = date
+        Switch.isOn = isCompleted
         updateComplete()
     }
     

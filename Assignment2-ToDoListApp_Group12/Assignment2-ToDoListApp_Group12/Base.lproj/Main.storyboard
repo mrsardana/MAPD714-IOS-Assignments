@@ -45,9 +45,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7Z-T2-y9J">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7Z-T2-y9J">
                                                     <rect key="frame" x="20" y="13" width="249" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="ydq-KT-0o9"/>
+                                                    </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
@@ -58,20 +60,8 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-BW-G1a">
-                                                    <rect key="frame" x="20" y="39" width="228" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Label">
-                                                            <attributes>
-                                                                <font key="NSFont" size="12" name="ArialMT"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXd-9v-hgI">
-                                                    <rect key="frame" x="324" y="26" width="51" height="31"/>
+                                                    <rect key="frame" x="324" y="25.666666666666671" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.59215686274509804" green="0.90196078431372551" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="thumbTintColor" red="1" green="0.98039215686274506" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
@@ -91,16 +81,35 @@
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="EditButton:" destination="5Vh-3s-OD0" eventType="touchUpInside" id="1Wq-ur-Znq"/>
-                                                        <segue destination="5FK-lz-ecf" kind="show" id="yYr-jK-RKF"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-BW-G1a">
+                                                    <rect key="frame" x="20" y="41" width="29.666666666666671" height="13.666666666666664"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="ArialMT"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="UXd-9v-hgI" firstAttribute="leading" secondItem="WkN-Dr-Yf8" secondAttribute="trailing" constant="8" symbolic="YES" id="6ut-ho-o6v"/>
-                                                <constraint firstItem="UXd-9v-hgI" firstAttribute="centerY" secondItem="WkN-Dr-Yf8" secondAttribute="centerY" constant="0.5" id="IXk-c6-WoM"/>
-                                                <constraint firstItem="UXd-9v-hgI" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="15" id="VPG-Dv-sXl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UXd-9v-hgI" secondAttribute="trailing" constant="-12" id="hMi-vY-vjE"/>
+                                                <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="hjj-BW-G1a" secondAttribute="leading" id="3Bu-Y1-TuF"/>
+                                                <constraint firstItem="hjj-BW-G1a" firstAttribute="top" secondItem="S7Z-T2-y9J" secondAttribute="bottom" constant="3" id="5ti-Fy-Fm1"/>
+                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="centerY" secondItem="UXd-9v-hgI" secondAttribute="centerY" id="7sH-Do-jvr"/>
+                                                <constraint firstItem="S7Z-T2-y9J" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="2" id="7uO-ep-H0S"/>
+                                                <constraint firstItem="UXd-9v-hgI" firstAttribute="leading" secondItem="WkN-Dr-Yf8" secondAttribute="trailing" constant="8" symbolic="YES" id="NsR-Ss-fiS"/>
+                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="leading" secondItem="S7Z-T2-y9J" secondAttribute="trailing" constant="7" id="Qco-Iw-rwU"/>
+                                                <constraint firstItem="hjj-BW-G1a" firstAttribute="top" secondItem="S7Z-T2-y9J" secondAttribute="bottom" constant="3" id="VuX-yV-oBh"/>
+                                                <constraint firstItem="S7Z-T2-y9J" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="2" id="WfW-7L-djI"/>
+                                                <constraint firstAttribute="trailing" secondItem="WkN-Dr-Yf8" secondAttribute="trailing" constant="65" id="Wg1-Yt-5cc"/>
+                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="leading" secondItem="S7Z-T2-y9J" secondAttribute="trailing" constant="7" id="XR4-il-bnj"/>
+                                                <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="45g-3a-C9e" secondAttribute="leadingMargin" id="XXk-nA-YJo"/>
+                                                <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="45g-3a-C9e" secondAttribute="leadingMargin" id="cRE-ER-GzJ"/>
+                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="10" id="hTX-zT-dgL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.59215686274509804" green="0.90196078431372551" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -108,6 +117,7 @@
                                             <outlet property="DateLabel" destination="hjj-BW-G1a" id="Yao-nP-qXU"/>
                                             <outlet property="Label" destination="S7Z-T2-y9J" id="9ul-vm-KUv"/>
                                             <outlet property="Switch" destination="UXd-9v-hgI" id="McV-Cc-w0t"/>
+                                            <segue destination="5FK-lz-ecf" kind="show" identifier="UpdateToDoViewController" destinationCreationSelector="updateViewController:" id="Ty1-Vy-I5T"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,7 +139,8 @@
                                     <color key="baseBackgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="3jv-m5-aSo" kind="show" id="6JM-as-Uz8"/>
+                                    <action selector="createNewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39h-h2-7nZ"/>
+                                    <segue destination="3jv-m5-aSo" kind="show" destinationCreationSelector="createViewController:" id="sq2-OC-Pkq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -207,6 +218,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.59215686270000001" green="0.90196078430000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="1" green="0.98039215690000003" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="dueDateSwitchChange:" destination="3jv-m5-aSo" eventType="valueChanged" id="9lF-m7-67o"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znd-ez-ylH">
                                 <rect key="frame" x="15" y="7" width="65" height="45"/>
@@ -215,6 +229,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="delete.left" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButton:" destination="3jv-m5-aSo" eventType="touchUpInside" id="0dz-vr-au2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G71-Kr-f42">
                                 <rect key="frame" x="314" y="7" width="65" height="45"/>
@@ -223,6 +240,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="plus.square.on.square" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createNewButton:" destination="3jv-m5-aSo" eventType="touchUpInside" id="i06-Sy-282"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-bv-Su2">
                                 <rect key="frame" x="15" y="81" width="112" height="23"/>
@@ -266,22 +286,25 @@
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTq-b8-nfG">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="TTq-b8-nfG">
                                 <rect key="frame" x="30" y="386" width="360" height="260"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemTealColor"/>
-                                <date key="date" timeIntervalSinceReferenceDate="689847037.14570701">
-                                    <!--2022-11-11 08:10:37 +0000-->
-                                </date>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="688989600">
                                     <!--2022-11-01 10:00:00 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="calenderDateSelect:" destination="3jv-m5-aSo" eventType="valueChanged" id="nH5-lB-A48"/>
+                                </connections>
                             </datePicker>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOL-Qh-9Tp">
                                 <rect key="frame" x="320" y="694" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.59215686270000001" green="0.90196078430000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="1" green="0.98039215690000003" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="completedSwitchChange:" destination="3jv-m5-aSo" eventType="valueChanged" id="now-Tq-4z7"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wbk-n5-aKy"/>
@@ -291,6 +314,9 @@
                     <connections>
                         <outlet property="ToDoDescriptionTextView" destination="h2L-Hx-lrt" id="hQY-Tm-f2i"/>
                         <outlet property="ToDoNameTextView" destination="whW-Jb-ewl" id="4sh-bN-bXi"/>
+                        <outlet property="calender" destination="TTq-b8-nfG" id="qlT-y7-c1d"/>
+                        <outlet property="completedSwitch" destination="iOL-Qh-9Tp" id="Nrx-b9-mJb"/>
+                        <outlet property="dueDateSwitch" destination="LUV-eG-KtY" id="Qge-hc-Ylt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5L0-Qd-05g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,12 +375,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.59215686270000001" green="0.90196078430000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="1" green="0.98039215690000003" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="dueDateSwitchChange:" destination="5FK-lz-ecf" eventType="valueChanged" id="hKq-A1-DN5"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoh-HB-1nw">
                                 <rect key="frame" x="320" y="687" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.59215686270000001" green="0.90196078430000004" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" red="1" green="0.98039215690000003" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="completedSwitchChange:" destination="5FK-lz-ecf" eventType="valueChanged" id="cjA-Ed-g4Z"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grt-VG-0Py">
                                 <rect key="frame" x="314" y="7" width="65" height="45"/>
@@ -363,6 +395,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButton:" destination="5FK-lz-ecf" eventType="touchUpInside" id="BwF-cM-Bjx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-r5-z7X">
                                 <rect key="frame" x="21" y="7" width="65" height="45"/>
@@ -371,6 +406,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="delete.left" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButton:" destination="5FK-lz-ecf" eventType="touchUpInside" id="sVq-qo-9W4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiW-fB-UaU">
                                 <rect key="frame" x="164" y="714" width="65" height="45"/>
@@ -379,6 +417,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButton:" destination="5FK-lz-ecf" eventType="touchUpInside" id="ycC-zH-Brd"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYn-1K-tqm">
                                 <rect key="frame" x="15" y="204" width="360" height="116"/>
@@ -422,13 +463,10 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTO-i0-fup">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="hTO-i0-fup">
                                 <rect key="frame" x="30" y="386" width="360" height="260"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <date key="date" timeIntervalSinceReferenceDate="689847037.14891195">
-                                    <!--2022-11-11 08:10:37 +0000-->
-                                </date>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="688989600">
                                     <!--2022-11-01 10:00:00 +0000-->
                                 </date>
@@ -441,6 +479,9 @@
                     <connections>
                         <outlet property="ToDoDescriptionTextView" destination="xYn-1K-tqm" id="WVR-Fs-nGa"/>
                         <outlet property="ToDoNameTextView" destination="8bZ-X1-VgE" id="BfF-95-7Iy"/>
+                        <outlet property="calender" destination="hTO-i0-fup" id="qXE-ty-nKa"/>
+                        <outlet property="completedSwitch" destination="xoh-HB-1nw" id="Zss-mb-qIe"/>
+                        <outlet property="dueDateSwitch" destination="aa3-gc-XIG" id="jkI-dD-9vC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ou-bn-N0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

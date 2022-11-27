@@ -1,4 +1,4 @@
-//  Assignment 2 - ToDoListApp - Part 1 – UI Design
+//  Assignment 2 - ToDoListApp - Part 2 – Adding Logic for Data Persistence
 //  Group No 12
 //  Author's name and StudentID:
 //  1. Deepak Sardana
@@ -7,8 +7,8 @@
 //  Student ID: 301274473
 //  3. Muhammad Bilal Dilbar Hussain
 //  Student ID: 301205152
-//  App description: This is first part of App. Using Xcode, latest version of iOS SDK and the Swift programming language, we have created a To Do List app. In this part, we created the User Interface for the Todo List App. The app interface will allow the user to create a list of Todos on the main screen. We also included a another screen that displays the Todo Details.
-//  Last Updated 11 November, 2022
+//  App description: This is second part of App. Using Xcode, latest version of iOS SDK and the Swift programming language, we have created a To Do List app. In this part, we have added the logic that powers the User Interface (UI) for the Todo App. We have used Core Date to save the data. By using this app user can create new todo task also user can update the old created tasks.
+//  Last Updated 27 November, 2022
 //  Xcode Version : Version 14.1 (14B47b)
 
 
@@ -16,18 +16,11 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource
 {
+    static let shared = ViewController()
+    
     @IBOutlet weak var ToDoListTabelView: UITableView!
     
-    let myList = [ToDoList(name:"Meeting 1", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 2", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 3", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 4", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 5", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 6", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 7", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 8", date: "14 Nov 2022"),
-                  ToDoList(name:"Meeting 9", date: "14 Nov 2022")
-    ]
+    var myList: [ToDoTasks] = []
     
     let myListIdentifier = "MyListIdentifier"
     
@@ -36,6 +29,15 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         ToDoListTabelView.separatorStyle = .none
         ToDoListTabelView.showsVerticalScrollIndicator = false
+        myList = DataManager.shared.toDos()
+        ToDoListTabelView.reloadData()
+        
+    }
+    
+    
+    @IBAction func createNewButton(_ sender: UIButton)
+    {
+        
     }
     
     // Creating sections of mylist records counts
@@ -72,15 +74,70 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: myListIdentifier, for : indexPath) as! SwitchEditTableViewCell
         let todo = myList[indexPath.section]
-               
-        cell.set(name: todo.name, date : todo.date ,isComplete: todo.isComplete)
+        
+//        print(todo.date!)
+        cell.set(title: todo.title!, date : todo.date!, isCompleted: todo.isCompleted, dueDateReq:todo.dueDateReq)
         cell.layer.cornerRadius = 40
         cell.layer.borderWidth = 2
         cell.clipsToBounds = true
         cell.layer.borderColor = UIColor(red: 0, green: 0,  blue: 0, alpha: 0.5).cgColor
         return cell
     }
+    
+    @IBSegueAction func createViewController(_ coder: NSCoder) -> CreateToDoViewController?
+    {
+        let vc = CreateToDoViewController(coder: coder)
+        vc?.delegate = self
+        return vc
+    }
+    
+    @IBSegueAction func updateViewController(_ coder: NSCoder) -> UpdateToDoViewController?
+    {
+        let vc = UpdateToDoViewController(coder: coder)
+        if let indexpath = ToDoListTabelView.indexPathForSelectedRow
+        {
+            let todo = myList[indexpath.section]
+            vc?.todo = todo
+//            print(todo)
+        }
+        
+        vc?.delegate = self
+        return vc
+    }
+    
+}
 
+
+extension ViewController: CreateToDoViewControllerDelegate
+{
+    func createToDoViewController(_ vc: CreateToDoViewController)
+    {
+        print("Creation Done")
+        myList = DataManager.shared.toDos()
+        ToDoListTabelView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
+
+extension ViewController: UpdateToDoViewControllerDelegate
+{
+    func updateToDoViewController(_ vc: UpdateToDoViewController)
+    {
+        if let indexPath = ToDoListTabelView.indexPathForSelectedRow
+        {
+            // Update
+//            myList[indexPath.section] = todo
+            myList = DataManager.shared.toDos()
+            ToDoListTabelView.reloadData()
+        }
+        else
+        {
+            //Nothing
+        }
+        print("Update Done")
+        dismiss(animated: true, completion: nil)
+    }
+
+}

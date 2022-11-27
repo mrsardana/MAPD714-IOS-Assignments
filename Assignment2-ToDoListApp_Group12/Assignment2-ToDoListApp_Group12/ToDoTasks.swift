@@ -1,7 +1,9 @@
 import Foundation
 struct ToDoList
 {
-    var name: String
+    var title: String
+    var descrption: String
     var date: String
-    var isComplete:Bool = false
+    var dueDateReq:Bool = false
+    var isCompleted:Bool = false
 }

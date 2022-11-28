@@ -73,10 +73,10 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: myListIdentifier, for : indexPath) as! SwitchEditTableViewCell
+        cell.delegate = self
         let todo = myList[indexPath.section]
-        
 //        print(todo.date!)
-        cell.set(title: todo.title!, date : todo.date!, isCompleted: todo.isCompleted, dueDateReq:todo.dueDateReq)
+        cell.set(title: todo.title!, date : todo.date!, iscompleted: todo.isCompleted, dueDateReq:todo.dueDateReq)
         cell.layer.cornerRadius = 40
         cell.layer.borderWidth = 2
         cell.clipsToBounds = true
@@ -98,7 +98,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         {
             let todo = myList[indexpath.section]
             vc?.todo = todo
-//            print(todo)
+//            print(todo.dueDateReq)
         }
         
         vc?.delegate = self
@@ -112,7 +112,6 @@ extension ViewController: CreateToDoViewControllerDelegate
 {
     func createToDoViewController(_ vc: CreateToDoViewController)
     {
-        print("Creation Done")
         myList = DataManager.shared.toDos()
         ToDoListTabelView.reloadData()
         dismiss(animated: true, completion: nil)
@@ -136,8 +135,24 @@ extension ViewController: UpdateToDoViewControllerDelegate
         {
             //Nothing
         }
-        print("Update Done")
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension ViewController:SwitchEditTableViewCellDelegate
+{
+    func checkTableViewCell(_ cell: SwitchEditTableViewCell, didChangeSwitchState on: Bool)
+    {
+        guard let indexPath = ToDoListTabelView.indexPath(for: cell) else {
+            return
+        }
+        let todo = myList[indexPath.section]
+//        let newTodo = ToDoTasks()
+        print("edit")
+//        print(todo)
+        
+    }
+    
+    
 }

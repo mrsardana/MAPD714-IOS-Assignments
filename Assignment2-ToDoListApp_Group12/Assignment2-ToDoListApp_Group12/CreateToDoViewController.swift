@@ -60,9 +60,12 @@ class CreateToDoViewController: UIViewController {
         
         // Save new created toDo task
         let toDo = DataManager.shared.toDoTasks(title: toDoTitle, descrption: toDoDescription, date: dateValue, dueDateReq: dueDate, isCompleted: isCompelte)
+        print("Created")
         DataManager.shared.saveContext()
+        
 //        let todo = ToDoTasks()
 //        delegate?.createToDoViewController(self, didCreateTodo: todo)
+        
         delegate?.createToDoViewController(self)
 //        dismiss(animated: true, completion: nil)
     }
@@ -71,7 +74,6 @@ class CreateToDoViewController: UIViewController {
     @IBAction func cancelButton(_ sender: Any)
     {
         dismiss(animated: true, completion: nil)
-//        navigationController?.pushViewController(ViewController(), animated: true)
     }
     
     @IBOutlet weak var dueDateSwitch: UISwitch!

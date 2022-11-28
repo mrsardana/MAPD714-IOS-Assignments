@@ -1,8 +1,15 @@
 import UIKit
 import Foundation
 
+protocol SwitchEditTableViewCellDelegate: AnyObject
+{
+    func checkTableViewCell(_ cell:SwitchEditTableViewCell, didChangeSwitchState on: Bool)
+}
+
 class SwitchEditTableViewCell: UITableViewCell
 {
+    weak var delegate:SwitchEditTableViewCellDelegate?
+    
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     
@@ -15,11 +22,13 @@ class SwitchEditTableViewCell: UITableViewCell
     @IBAction func SwitchChange(_ sender: UISwitch)
     {
         updateComplete()
+        delegate?.checkTableViewCell(self, didChangeSwitchState: Switch.isOn)
     }
     
 
-    func set(title: String, date: String, isCompleted:Bool, dueDateReq:Bool)
+    func set(title: String, date: String, iscompleted:Bool, dueDateReq:Bool)
     {
+
         if dueDateReq
         {
             DateLabel.text = date
@@ -29,8 +38,7 @@ class SwitchEditTableViewCell: UITableViewCell
             DateLabel.text = ""
         }
         Label.text = title
-//        DateLabel.text = date
-        Switch.isOn = isCompleted
+        Switch.isOn = iscompleted
         updateComplete()
     }
     
@@ -41,11 +49,10 @@ class SwitchEditTableViewCell: UITableViewCell
         {
             attributeString.addAttribute(.strikethroughStyle,value: 1, range: NSMakeRange(0, attributeString.length))
             Label.textColor = UIColor(red: 0.239, green: 0.4196,  blue: 0.031372, alpha: 1)
-            
         }
         else
         {
-            attributeString.removeAttribute(.strikethroughStyle, range: NSMakeRange(0, attributeString.length))
+            attributeString.addAttribute(.strikethroughStyle,value: 0, range: NSMakeRange(0, attributeString.length))
             Label.textColor = UIColor.black
             
         }

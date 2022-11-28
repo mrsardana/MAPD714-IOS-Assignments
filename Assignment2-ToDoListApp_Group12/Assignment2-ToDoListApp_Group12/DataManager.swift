@@ -45,7 +45,8 @@ class DataManager
         return task
     }
     
-    func toDos() ->[ToDoTasks]{
+    func toDos() ->[ToDoTasks]
+    {
         let request:NSFetchRequest<ToDoTasks> = ToDoTasks.fetchRequest()
         var fetchedToDos: [ToDoTasks] = []
         
@@ -59,6 +60,16 @@ class DataManager
         }
         return fetchedToDos
     }
+    
+    func deleteContext(item: ToDoTasks)
+    {
+        let context = persistentContainer.viewContext
+        context.delete(item)
+//        print("Delete Done")
+        saveContext()
+    }
+
+
     
     // MARK: - Core Data Saving support
 

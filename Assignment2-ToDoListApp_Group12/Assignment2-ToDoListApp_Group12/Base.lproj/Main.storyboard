@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7Z-T2-y9J">
-                                                    <rect key="frame" x="20" y="13" width="249" height="25"/>
+                                                    <rect key="frame" x="20.000000000000004" y="13" width="52.333333333333343" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="ydq-KT-0o9"/>
                                                     </constraints>
@@ -60,29 +60,15 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXd-9v-hgI">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXd-9v-hgI">
                                                     <rect key="frame" x="324" y="25.666666666666671" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="onTintColor" red="0.59215686274509804" green="0.90196078431372551" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="thumbTintColor" red="1" green="0.98039215686274506" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <connections>
                                                         <action selector="SwitchChange:" destination="5Vh-3s-OD0" eventType="valueChanged" id="Tiz-b7-woD"/>
                                                     </connections>
                                                 </switch>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkN-Dr-Yf8">
-                                                    <rect key="frame" x="276" y="21" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="PDt-B7-aAd"/>
-                                                        <constraint firstAttribute="width" constant="40" id="ecz-tZ-jeY"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" image="square.and.pencil" catalog="system" cornerStyle="capsule">
-                                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="baseBackgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="EditButton:" destination="5Vh-3s-OD0" eventType="touchUpInside" id="1Wq-ur-Znq"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-BW-G1a">
                                                     <rect key="frame" x="20" y="41" width="29.666666666666671" height="13.666666666666664"/>
                                                     <attributedString key="attributedText">
@@ -99,25 +85,19 @@
                                             <constraints>
                                                 <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="hjj-BW-G1a" secondAttribute="leading" id="3Bu-Y1-TuF"/>
                                                 <constraint firstItem="hjj-BW-G1a" firstAttribute="top" secondItem="S7Z-T2-y9J" secondAttribute="bottom" constant="3" id="5ti-Fy-Fm1"/>
-                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="centerY" secondItem="UXd-9v-hgI" secondAttribute="centerY" id="7sH-Do-jvr"/>
                                                 <constraint firstItem="S7Z-T2-y9J" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="2" id="7uO-ep-H0S"/>
-                                                <constraint firstItem="UXd-9v-hgI" firstAttribute="leading" secondItem="WkN-Dr-Yf8" secondAttribute="trailing" constant="8" symbolic="YES" id="NsR-Ss-fiS"/>
-                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="leading" secondItem="S7Z-T2-y9J" secondAttribute="trailing" constant="7" id="Qco-Iw-rwU"/>
                                                 <constraint firstItem="hjj-BW-G1a" firstAttribute="top" secondItem="S7Z-T2-y9J" secondAttribute="bottom" constant="3" id="VuX-yV-oBh"/>
                                                 <constraint firstItem="S7Z-T2-y9J" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="2" id="WfW-7L-djI"/>
-                                                <constraint firstAttribute="trailing" secondItem="WkN-Dr-Yf8" secondAttribute="trailing" constant="65" id="Wg1-Yt-5cc"/>
-                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="leading" secondItem="S7Z-T2-y9J" secondAttribute="trailing" constant="7" id="XR4-il-bnj"/>
                                                 <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="45g-3a-C9e" secondAttribute="leadingMargin" id="XXk-nA-YJo"/>
                                                 <constraint firstItem="S7Z-T2-y9J" firstAttribute="leading" secondItem="45g-3a-C9e" secondAttribute="leadingMargin" id="cRE-ER-GzJ"/>
-                                                <constraint firstItem="WkN-Dr-Yf8" firstAttribute="top" secondItem="45g-3a-C9e" secondAttribute="topMargin" constant="10" id="hTX-zT-dgL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.59215686274509804" green="0.90196078431372551" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.83137254901960778" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="DateLabel" destination="hjj-BW-G1a" id="Yao-nP-qXU"/>
                                             <outlet property="Label" destination="S7Z-T2-y9J" id="9ul-vm-KUv"/>
                                             <outlet property="Switch" destination="UXd-9v-hgI" id="McV-Cc-w0t"/>
-                                            <segue destination="5FK-lz-ecf" kind="show" identifier="UpdateToDoViewController" destinationCreationSelector="updateViewController:" id="Ty1-Vy-I5T"/>
+                                            <segue destination="5FK-lz-ecf" kind="showDetail" identifier="EditItem" trigger="accessoryAction" id="Cgq-Fb-nxZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -13,10 +13,7 @@ class SwitchEditTableViewCell: UITableViewCell
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     
-    @IBAction func EditButton(_ sender: UIButton)
-    {
-        
-    }
+
     @IBOutlet weak var Switch: UISwitch!
     
     @IBAction func SwitchChange(_ sender: UISwitch)
@@ -38,6 +35,13 @@ class SwitchEditTableViewCell: UITableViewCell
             DateLabel.text = ""
         }
         Label.text = title
+        
+        set(iscompleted: iscompleted)
+        
+    }
+    
+    func set(iscompleted:Bool)
+    {
         Switch.isOn = iscompleted
         updateComplete()
     }

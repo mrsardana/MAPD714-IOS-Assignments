@@ -1,4 +1,4 @@
-//  Assignment 2 - ToDoListApp - Part 2 – Adding Logic for Data Persistence
+//  Assignment 2 - ToDoListApp - Part 3 – Gesture Control
 //  Group No 12
 //  Author's name and StudentID:
 //  1. Deepak Sardana
@@ -7,8 +7,8 @@
 //  Student ID: 301274473
 //  3. Muhammad Bilal Dilbar Hussain
 //  Student ID: 301205152
-//  App description: This is second part of App. Using Xcode, latest version of iOS SDK and the Swift programming language, we have created a To Do List app. In this part, we have added the logic that powers the User Interface (UI) for the Todo App. We have used Core Date to save the data. By using this app user can create new todo task also user can update the old created tasks.
-//  Last Updated 27 November, 2022
+//  App description: This is third part of App. Using Xcode, latest version of iOS SDK and the Swift programming language, we have created a To Do List app. In this part, we have modify the User Interface (UI) and logic to perform Gesture Control. Now By using this app user can update, delete the old created tasks using gestures.
+//  Last Updated 11 December, 2022
 //  Xcode Version : Version 14.1 (14B47b)
 
 
@@ -34,10 +34,66 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    
     @IBAction func createNewButton(_ sender: UIButton)
     {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if  segue.identifier == "EditItem"
+        {
+            print("Inside edit")
+            let controller = segue.destination as! UpdateToDoViewController
+            controller.delegate = self
+            controller.todo = sender as? ToDoTasks
+        }
+        
+    }
+    
+    // Swipe left to right method
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let update = UIContextualAction(style: .normal, title: "Update")
+        {
+            action, view , update in
+            print("Update")
+            self.performSegue(withIdentifier: "EditItem", sender:self.myList[indexPath.section])
+            update(false)
+        }
+        update.backgroundColor = UIColor(red: 0, green: 0,  blue: 1, alpha: 0.5)
+        return UISwipeActionsConfiguration(actions: [update])
+    }
+    
+    // Swipe right to left method
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+            let complete = UIContextualAction(style: .destructive, title: "Complete"){
+            action, view , complete in
+            let todo = self.myList[indexPath.section].isCompleted
+            let updatetodo = todo == true ? false: true
+            let todos = self.myList[indexPath.section]
+            todos.isCompleted = updatetodo
+            DataManager.shared.saveContext()
+            print("Compeled Change")
+            self.ToDoListTabelView.reloadData()
+            complete(false)
+        }
+        complete.backgroundColor = UIColor(red: 1, green: 1,  blue: 0, alpha: 0.65)
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete"){
+            action, view , delete in
+            let todo = self.myList[indexPath.section]
+            DataManager.shared.deleteContext(item: todo)
+            print("Delete Done")
+            DataManager.shared.saveContext()
+            self.myList = DataManager.shared.toDos()
+            self.ToDoListTabelView.reloadData()
+            delete(false)
+        }
+        delete.backgroundColor = UIColor(red: 1, green: 0,  blue: 0, alpha: 1)
+        
+        return UISwipeActionsConfiguration(actions: [delete, complete])
     }
     
     // Creating sections of mylist records counts
@@ -77,13 +133,18 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let todo = myList[indexPath.section]
 //        print(todo.date!)
         cell.set(title: todo.title!, date : todo.date!, iscompleted: todo.isCompleted, dueDateReq:todo.dueDateReq)
-        cell.layer.cornerRadius = 40
-        cell.layer.borderWidth = 2
-        cell.clipsToBounds = true
-        cell.layer.borderColor = UIColor(red: 0, green: 0,  blue: 0, alpha: 0.5).cgColor
+//        cell.layer.cornerRadius = 40
+//        cell.layer.borderWidth = 2
+//        cell.clipsToBounds = true
+//        cell.layer.masksToBounds = true
+        cell.contentView.layer.cornerRadius = 40
+        cell.contentView.layer.borderWidth = 2
+        cell.contentView.layer.borderColor = UIColor(red: 0, green: 0,  blue: 0, alpha: 0.5).cgColor
         return cell
     }
     
+
+    // Segue action to Create new todo task
     @IBSegueAction func createViewController(_ coder: NSCoder) -> CreateToDoViewController?
     {
         let vc = CreateToDoViewController(coder: coder)
@@ -91,20 +152,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return vc
     }
     
-    @IBSegueAction func updateViewController(_ coder: NSCoder) -> UpdateToDoViewController?
-    {
-        let vc = UpdateToDoViewController(coder: coder)
-        if let indexpath = ToDoListTabelView.indexPathForSelectedRow
-        {
-            let todo = myList[indexpath.section]
-            vc?.todo = todo
-//            print(todo.dueDateReq)
-        }
-        
-        vc?.delegate = self
-        return vc
-    }
-    
+//    @IBSegueAction func updateViewController(_ coder: NSCoder) -> UpdateToDoViewController?
+//    {
+//        let vc = UpdateToDoViewController(coder: coder)
+//        if let indexpath = ToDoListTabelView.indexPathForSelectedRow
+//        {
+//            let todo = myList[indexpath.section]
+//            vc?.todo = todo
+////            print(todo.dueDateReq)
+//        }
+//
+//        vc?.delegate = self
+//        return vc
+//    }
 }
 
 
@@ -133,7 +193,8 @@ extension ViewController: UpdateToDoViewControllerDelegate
         }
         else
         {
-            //Nothing
+            myList = DataManager.shared.toDos()
+            ToDoListTabelView.reloadData()
         }
         dismiss(animated: true, completion: nil)
     }
@@ -148,11 +209,9 @@ extension ViewController:SwitchEditTableViewCellDelegate
             return
         }
         let todo = myList[indexPath.section]
-//        let newTodo = ToDoTasks()
-        print("edit")
-//        print(todo)
+        todo.isCompleted = on
+        print("Compeled Change")
+        DataManager.shared.saveContext()
         
     }
-    
-    
 }
